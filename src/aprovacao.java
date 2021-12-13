@@ -1,7 +1,7 @@
 
 public enum aprovacao {
 	
-	Aprovado(1), Reprovado(2), Exame(3);
+	Aprovado(1), Reprovado(2);
 
 	
 	private final int valor;

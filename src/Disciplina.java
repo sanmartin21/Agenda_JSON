@@ -1,4 +1,3 @@
-
 public class Disciplina {
 	
 	private Aluno aluno;
@@ -39,16 +38,6 @@ public class Disciplina {
 		if(nota>0)
 		this.nota = nota;
 	}
-	
-	int n = 4;
-	private int notas[] = new int [n];{
-		for (i = 0; i<n; i++) {
-			v[i] = i;
-	}
-	
-		
-	}
-	
 	
 }
 

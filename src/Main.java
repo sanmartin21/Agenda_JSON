@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
+
+//		Carga de dados inicial
 
 		ListPessoa l = new ListPessoa();
 
@@ -13,34 +17,22 @@ public class Main {
 		l.add(pes);
 
 		l.gravar();
+		l.setLista(l.ler());
+
+
+		pes = new Pessoa();
+		pes.setDataNascimento("26/07/2009");
+		pes.setNome("Carlos");
+		pes.setIdade(40);
+		pes.setEndereco("Rua Conceicao");
+		pes.setCpf("565.444.543-32");
+		l.add(pes);
+
+		l.gravar();
 
 		l = new ListPessoa();
 
 		l.setLista(l.ler());
-
-		for (Pessoa p : l.getLista()) {
-			System.out.println(p);
-		}
-		
-		ListPessoa l2 = new ListPessoa();
-
-		Pessoa pes2 = new Pessoa();
-		pes2.setDataNascimento("26/07/2009");
-		pes2.setNome("Carlos");
-		pes2.setIdade(40);
-		pes2.setEndereco("Rua Conceicao");
-		pes2.setCpf("565.444.543-32");
-		l2.add(pes2);
-
-		l2.gravar();
-
-		l2 = new ListPessoa();
-
-		l2.setLista(l2.ler());
-
-		for (Pessoa p : l2.getLista()) {
-			System.out.println(p);
-		}
 
 		// PROFESSOR
 
@@ -64,7 +56,7 @@ public class Main {
 		pr.setLista(pr.ler());
 
 		for (Professor j : pr.getLista()) {
-			System.out.println(j);
+			//System.out.println(j);
 		}
 
 		// Aluno
@@ -83,12 +75,10 @@ public class Main {
 
 		al.gravar();
 
-		al = new ListAluno();
-
 		al.setLista(al.ler());
 
 		for (Aluno s : al.getLista()) {
-			System.out.println(s);
+			//System.out.println(s);
 		}
 		
 		
@@ -111,10 +101,60 @@ public class Main {
 		tu.setLista(tu.ler());
 
 		for (Turma t : tu.getLista()) {
-			System.out.println(t);
+			//System.out.println(t);
 		}
-		
-		
+
+
+
+		int opcao = 0;
+		do {
+			System.out.println("\n\n### SISTEMA PARA CONTROLE DE ALUNOS ###");
+			System.out.println("\n                   ===============================");
+			System.out.println("                  |     1 - Adicionar Aluno       |");
+			System.out.println("                  |     2 - Editar Aluno	  |");
+			System.out.println("                  |     3 - Excluir Aluno         |");
+			System.out.println("                  |     4 - Listar Alunos	  |");
+			System.out.println("                  |     5 - Adicionar Professor   |");
+			System.out.println("                  |     6 - Editar Professor      |");
+			System.out.println("                  |     7 - Excluir Professor	  |");
+			System.out.println("                  |     8 - Listar Professores    |");
+			System.out.println("                  |     0 - Sair          	  |");
+			System.out.println("                   ===============================\n");
+			System.out.println("Escolha uma opção -> ");
+			Scanner ler = new Scanner(System.in);
+			opcao = ler.nextInt();
+			System.out.print("\n");
+			switch (opcao) {
+				case 1:
+					al.adicionaAluno(al);
+					break;
+				case 2:
+					break;
+				case 3:
+					al.excluiAluno(al.getLista());
+					break;
+				case 4:
+					al.mostraLista();
+					break;
+				case 5:
+					pr.adicionaProfessor(pr);
+					break;
+				case 6:
+					break;
+				case 7:
+					pr.excluiProfessor(pr.getLista());
+					break;
+				case 8:
+					pr.mostraLista();
+					break;
+				case 0:
+					break;
+				default:
+					System.out.println("Opção Inválida!");
+					break;
+			}
+		} while (opcao != 0);
+
 
 	}
 }
