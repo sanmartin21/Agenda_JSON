@@ -1,7 +1,6 @@
-
 public class Turma {
 	private String nomeTurma;
-	private int quantidadeAlunos;
+	private int codigoTurma;
 	protected Professor professor;
 	protected Aluno aluno;
 
@@ -14,13 +13,13 @@ public class Turma {
 			this.nomeTurma = nomeTurma;
 	}
 
-	public int getQuantidadeAlunos() {
-		return quantidadeAlunos;
+	public int getCodigoTurma() {
+		return codigoTurma;
 	}
 
-	public void setQuantidadeAlunos(int quantidadeAlunos) {
-		if (quantidadeAlunos > 0)
-			this.quantidadeAlunos = quantidadeAlunos;
+	public void setCodigoTurma(int codigoTurma) {
+		if (codigoTurma > 0)
+			this.codigoTurma = codigoTurma;
 	}
 
 	public Professor getProfessor() {
@@ -44,8 +43,8 @@ public class Turma {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Turma [nomeTurma=");
 		builder.append(nomeTurma);
-		builder.append(", quantidadeAlunos=");
-		builder.append(quantidadeAlunos);
+		builder.append(", codigoTurma=");
+		builder.append(codigoTurma);
 		builder.append(", professor=");
 		builder.append(professor);
 		builder.append(", aluno=");

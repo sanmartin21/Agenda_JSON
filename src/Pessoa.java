@@ -7,6 +7,8 @@ public class Pessoa {
 	private String endereco;
 	private String cpf;
 
+
+	
 	public String getDataNascimento() {
 		return dataNascimento;
 	}
@@ -30,6 +32,7 @@ public class Pessoa {
 	}
 
 	public void setIdade(int idade) {
+		if(idade>0)
 			this.idade = idade;
 	}
 
