@@ -7,7 +7,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -105,14 +104,15 @@ public class ListAluno {
 			if (aluno.getCodigoAcesso() == cdAcesso) {
 				alEncontrado = aluno;
 			} else {
-				System.out.println("Código de acesso não encontrado!");
+				if (alEncontrado == null)
+					System.out.println("Código de acesso não encontrado!");
 			}
+		}
 
-			if (alEncontrado != null) {
-				l.getLista().remove(alEncontrado);
-				l.gravar();
-				System.out.println("Aluno removido com sucesso!");
-			}
+		if (alEncontrado != null) {
+			System.out.println("Aluno removido com sucesso!");
+			l.getLista().remove(alEncontrado);
+			l.gravar();
 		}
 	}
 
@@ -153,13 +153,14 @@ public class ListAluno {
 				 */
 
 			} else {
-				System.out.println("Código de acesso não encontrado!");
+				if (alEncontrado == null)
+					System.out.println("Código de acesso não encontrado!");
 
 			}
-			if (alEncontrado != null) {
-				l.gravar();
-				System.out.println("Aluno alterado com sucesso!");
-			}
+		}
+		if (alEncontrado != null) {
+			l.gravar();
+			System.out.println("Aluno alterado com sucesso!");
 		}
 	}
 }

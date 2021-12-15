@@ -113,12 +113,12 @@ public class ListProfessor {
 			} else {
 				System.out.println("Código de acesso não encontrado!");
 			}
+		}
 
-			if (prEncontrado != null) {
-				pr.getLista().remove(prEncontrado);
-				pr.gravar();
-				System.out.println("Professor removido com sucesso!");
-			}
+		if (prEncontrado != null) {
+			System.out.println("Professor removido com sucesso!");
+			pr.getLista().remove(prEncontrado);
+			pr.gravar();
 		}
 	}
 
@@ -165,13 +165,13 @@ public class ListProfessor {
 				professor.setEspecialidade(ler.next());
 
 			} else {
+				if (prEncontrado == null)
 				System.out.println("Código de acesso não encontrado!");
-
 			}
-			if (prEncontrado != null) {
-				pr.gravar();
-				System.out.println("Professor alterado com sucesso!");
-			}
+		}
+		if (prEncontrado != null) {
+			pr.gravar();
+			System.out.println("Professor alterado com sucesso!");
 		}
 	}
 }

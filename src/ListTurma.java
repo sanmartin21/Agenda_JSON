@@ -114,14 +114,15 @@ public class ListTurma {
 			if (turma.getCodigoTurma() == cdAcesso) {
 				turmaEncontrada = turma;
 			} else {
+				if (turmaEncontrada == null)
 				System.out.println("Código de acesso não encontrado!");
 			}
+		}
 
-			if (turmaEncontrada != null) {
-				tu.getLista().remove(turmaEncontrada);
-				tu.gravar();
-				System.out.println("Turma removida com sucesso!");
-			}
+		if (turmaEncontrada != null) {
+			System.out.println("Turma removida com sucesso!");
+			tu.getLista().remove(turmaEncontrada);
+			tu.gravar();
 		}
 	}
 
@@ -137,21 +138,22 @@ public class ListTurma {
 		for (Turma turma : tu.getLista()) {
 			if (turma.getCodigoTurma() == cdAcesso) {
 				turmaEncontrado = turma;
-				
+
 				System.out.println("Digite o novo Código da turma: ");
 				turma.setCodigoTurma(ler.nextInt());
 
 				System.out.println("Digite o novo nome da turma:");
 				turma.setNomeTurma(ler.next());
 
-			}else {
+			} else {
+				if (turmaEncontrado == null)
 				System.out.println("Código de acesso não encontrado!");
 			}
-			
+		}
+
 		if (turmaEncontrado != null) {
 			tu.gravar();
 			System.out.println("Turma alterado com sucesso!");
 		}
 	}
-}
 }
