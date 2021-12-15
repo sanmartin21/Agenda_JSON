@@ -52,6 +52,8 @@ public class Professor extends Pessoa {
 		builder.append(especialidade);
 		builder.append(", salario=");
 		builder.append(salario);
+		builder.append(", toString()=");
+		builder.append(super.toString());
 		builder.append("]");
 		return builder.toString();
 	}

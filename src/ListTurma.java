@@ -55,12 +55,11 @@ public class ListTurma {
 		return lista;
 	}
 
-	public void mostraLista(List<Turma> tu, List < Professor> pr, List< Aluno> al) {
+	public void mostraLista(List<Turma> tu, List<Professor> pr, List<Aluno> al) {
 		for (Turma t : tu) {
-			//System.out.println("turma: ");
 			System.out.println(t);
-			mostraListaProfessor(t.getCodigoTurma(),pr);
-			
+			mostraListaProfessor(t.getCodigoTurma(), pr);
+			mostraListaAluno(t.getCodigoTurma(), al);
 
 		}
 		System.out.println(ler());
@@ -85,43 +84,74 @@ public class ListTurma {
 		tu.setLista(tu.ler());
 	}
 
-	public void mostraListaProfessor(int cdTurma, List<Professor> pr){
-		//System.out.println("Professores");
-		for(Professor p : pr){
+	public void mostraListaProfessor(int cdTurma, List<Professor> pr) {
+		for (Professor p : pr) {
 			if (p.getCodigoTurma() == cdTurma) {
 				System.out.println(p);
 			}
-	
-			
+
 		}
 	}
 
-	public void mostraListaAluno(int cdTurma, List<Aluno> l) {
-		System.out.println(ler());
+	public void mostraListaAluno(int cdTurma, List<Aluno> al) {
+		for (Aluno a : al) {
+			if (a.getCodigoTurma() == cdTurma) {
+				System.out.println(a);
+			}
+		}
 	}
 
-	public void excluiProfessor(List<Professor> l) {
+	public void excluiTurma(ListTurma tu) {
 		Scanner ler = new Scanner(System.in);
 
-		System.out.println("Exclusão de professor: \n");
+		System.out.println("Exclusão de turma: \n");
 
-		System.out.println("Digite o código de acesso do professor que deseja excluir: ");
+		System.out.println("Digite o código de acesso da turma que deseja excluir: ");
 		Integer cdAcesso = ler.nextInt();
 
-		Professor alEncontrado = null;
-		for (Professor professor : l) {
-			if (professor.getCodigoAcessoProfessor() == cdAcesso) {
-				alEncontrado = professor;
+		Turma turmaEncontrada = null;
+		for (Turma turma : tu.getLista()) {
+			if (turma.getCodigoTurma() == cdAcesso) {
+				turmaEncontrada = turma;
 			} else {
 				System.out.println("Código de acesso não encontrado!");
 			}
-		}
 
-		if (alEncontrado != null) {
-			l.remove(alEncontrado);
-			System.out.println("Professor removido com sucesso!");
+			if (turmaEncontrada != null) {
+				tu.getLista().remove(turmaEncontrada);
+				tu.gravar();
+				System.out.println("Turma removida com sucesso!");
+			}
 		}
-
 	}
 
+	public void alterarTurma(ListTurma tu) {
+		Scanner ler = new Scanner(System.in);
+
+		System.out.println("Alteração de Turma: \n");
+
+		System.out.println("Digite o código de acesso da turma que deseja alterar: ");
+		Integer cdAcesso = ler.nextInt();
+
+		Turma turmaEncontrado = null;
+		for (Turma turma : tu.getLista()) {
+			if (turma.getCodigoTurma() == cdAcesso) {
+				turmaEncontrado = turma;
+				
+				System.out.println("Digite o novo Código da turma: ");
+				turma.setCodigoTurma(ler.nextInt());
+
+				System.out.println("Digite o novo nome da turma:");
+				turma.setNomeTurma(ler.next());
+
+			}else {
+				System.out.println("Código de acesso não encontrado!");
+			}
+			
+		if (turmaEncontrado != null) {
+			tu.gravar();
+			System.out.println("Turma alterado com sucesso!");
+		}
+	}
+}
 }

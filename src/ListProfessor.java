@@ -59,7 +59,7 @@ public class ListProfessor {
 		System.out.println(ler());
 	}
 
-	public void adicionaProfessor(ListProfessor l) {
+	public void adicionaProfessor(ListProfessor pr) {
 		Professor p = new Professor();
 
 		Scanner ler = new Scanner(System.in);
@@ -93,12 +93,12 @@ public class ListProfessor {
 		System.out.println("Digite a especialidade do Professor: ");
 		p.setEspecialidade(ler.next());
 
-		l.add(p);
-		l.gravar();
-		l.setLista(l.ler());
+		pr.add(p);
+		pr.gravar();
+		pr.setLista(pr.ler());
 	}
 
-	public void excluiProfessor(ListProfessor l) {
+	public void excluiProfessor(ListProfessor pr) {
 		Scanner ler = new Scanner(System.in);
 
 		System.out.println("Exclusão de professor: \n");
@@ -107,7 +107,7 @@ public class ListProfessor {
 		Integer cdAcesso = ler.nextInt();
 
 		Professor prEncontrado = null;
-		for (Professor professor : l.getLista()) {
+		for (Professor professor : pr.getLista()) {
 			if (professor.getCodigoAcessoProfessor() == cdAcesso) {
 				prEncontrado = professor;
 			} else {
@@ -115,14 +115,14 @@ public class ListProfessor {
 			}
 
 			if (prEncontrado != null) {
-				l.getLista().remove(prEncontrado);
-				l.gravar();
+				pr.getLista().remove(prEncontrado);
+				pr.gravar();
 				System.out.println("Professor removido com sucesso!");
 			}
 		}
 	}
 
-	public void alterarProfessor(ListProfessor l) {
+	public void alterarProfessor(ListProfessor pr) {
 		Scanner ler = new Scanner(System.in);
 
 		System.out.println("Alteração de Professor: \n");
@@ -131,7 +131,7 @@ public class ListProfessor {
 		Integer cdAcesso = ler.nextInt();
 
 		Professor prEncontrado = null;
-		for (Professor professor : l.getLista()) {
+		for (Professor professor : pr.getLista()) {
 			if (professor.getCodigoAcessoProfessor() == cdAcesso) {
 				prEncontrado = professor;
 
@@ -150,8 +150,10 @@ public class ListProfessor {
 				System.out.println("Digite o novo CPF: ");
 				professor.setCpf(ler.next());
 
-				/*System.out.println("Digite o novo código de acesso do Professor: ");
-				professor.setCodigoProfessor(ler.nextInt());*/
+				/*
+				 * System.out.println("Digite o novo código de acesso do Professor: ");
+				 * professor.setCodigoProfessor(ler.nextInt());
+				 */
 
 				System.out.println("Digite o novo código da Turma: ");
 				professor.setCodigoTurma(ler.nextInt());
@@ -167,11 +169,9 @@ public class ListProfessor {
 
 			}
 			if (prEncontrado != null) {
-				l.gravar();
+				pr.gravar();
 				System.out.println("Professor alterado com sucesso!");
-
 			}
-
 		}
 	}
 }

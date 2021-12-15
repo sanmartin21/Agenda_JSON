@@ -64,7 +64,6 @@ public class ListAluno {
 
 		Scanner ler = new Scanner(System.in);
 
-
 		System.out.println("Inclusão de aluno: \n");
 
 		System.out.println("Digite a data de nascimento: (dd/mm/AAAA)");
@@ -108,12 +107,12 @@ public class ListAluno {
 			} else {
 				System.out.println("Código de acesso não encontrado!");
 			}
-		}
 
-		if (alEncontrado != null) {
-			l.getLista().remove(alEncontrado);
-			l.gravar();
-			System.out.println("Aluno removido com sucesso!");
+			if (alEncontrado != null) {
+				l.getLista().remove(alEncontrado);
+				l.gravar();
+				System.out.println("Aluno removido com sucesso!");
+			}
 		}
 	}
 
@@ -129,7 +128,7 @@ public class ListAluno {
 		for (Aluno aluno : l.getLista()) {
 			if (aluno.getCodigoAcesso() == cdAcesso) {
 				alEncontrado = aluno;
-				
+
 				System.out.println("Digite a nova data de nascimento: (dd/mm/AAAA)");
 				aluno.setDataNascimento(ler.next());
 
@@ -145,11 +144,13 @@ public class ListAluno {
 				System.out.println("Digite o novo CPF: ");
 				aluno.setCpf(ler.next());
 
-				/*System.out.println("Digite o novo código da Turma: ");
-				aluno.setCodigoTurma(ler.nextInt());
-
-				System.out.println("Digite o novo código de acesso: ");
-				aluno.setCodigoAcesso(ler.nextInt());*/
+				/*
+				 * System.out.println("Digite o novo código da Turma: ");
+				 * aluno.setCodigoTurma(ler.nextInt());
+				 * 
+				 * System.out.println("Digite o novo código de acesso: ");
+				 * aluno.setCodigoAcesso(ler.nextInt());
+				 */
 
 			} else {
 				System.out.println("Código de acesso não encontrado!");
