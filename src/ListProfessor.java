@@ -111,7 +111,8 @@ public class ListProfessor {
 			if (professor.getCodigoAcessoProfessor() == cdAcesso) {
 				prEncontrado = professor;
 			} else {
-				System.out.println("Código de acesso não encontrado!");
+				if (prEncontrado == null)
+					System.out.println("Código de acesso não encontrado!");
 			}
 		}
 
@@ -164,14 +165,13 @@ public class ListProfessor {
 				System.out.println("Digite a nova especialidade do Professor: ");
 				professor.setEspecialidade(ler.next());
 
-			} else {
-				if (prEncontrado == null)
-				System.out.println("Código de acesso não encontrado!");
 			}
 		}
 		if (prEncontrado != null) {
 			pr.gravar();
 			System.out.println("Professor alterado com sucesso!");
+		} else {
+			System.out.println("Código de acesso não encontrado!");
 		}
 	}
 }

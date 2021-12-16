@@ -174,7 +174,7 @@ public class Main {
 		
 		int opcao = 0;
 		do {
-			System.out.println("\n\n### SISTEMA PARA CONTROLE DE ALUNOS ###");
+			System.out.println("\n\n### SISTEMA PARA CONTROLE DE ALUNOS - ADM PROFESSOR ###");
 			System.out.println("                   ===============================");
 			System.out.println("                  |     1 - Adicionar Aluno       |");
 			System.out.println("                  |     2 - Editar Aluno          |");
@@ -220,10 +220,13 @@ public class Main {
 				break;
 			case 9:
 				tu.adicionaTurma(tu);
+				break;
 			case 10:
 				tu.alterarTurma(tu);
+				break;
 			case 11:
 				tu.excluiTurma(tu);
+				break;
 			case 12:
 				tu.mostraLista(tu.getLista(), pr.getLista(), al.getLista());
 				break;

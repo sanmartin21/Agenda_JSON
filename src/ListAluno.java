@@ -103,9 +103,6 @@ public class ListAluno {
 		for (Aluno aluno : l.getLista()) {
 			if (aluno.getCodigoAcesso() == cdAcesso) {
 				alEncontrado = aluno;
-			} else {
-				if (alEncontrado == null)
-					System.out.println("Código de acesso não encontrado!");
 			}
 		}
 
@@ -113,6 +110,9 @@ public class ListAluno {
 			System.out.println("Aluno removido com sucesso!");
 			l.getLista().remove(alEncontrado);
 			l.gravar();
+		}
+		else {
+			System.out.println("Código de acesso não encontrado!");
 		}
 	}
 
@@ -152,15 +152,13 @@ public class ListAluno {
 				 * aluno.setCodigoAcesso(ler.nextInt());
 				 */
 
-			} else {
-				if (alEncontrado == null)
-					System.out.println("Código de acesso não encontrado!");
-
 			}
 		}
 		if (alEncontrado != null) {
 			l.gravar();
 			System.out.println("Aluno alterado com sucesso!");
+		}else {
+			System.out.println("Código de acesso não encontrado!");
 		}
 	}
 }
