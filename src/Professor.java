@@ -2,6 +2,7 @@ public class Professor extends Pessoa {
 
 	private int codigoAcessoProfessor;
 	private int codigoTurma;
+	private int codigoDisciplina;
 	private String especialidade;
 	private double salario;
 
@@ -27,7 +28,7 @@ public class Professor extends Pessoa {
 		return codigoAcessoProfessor;
 	}
 
-	public void setCodigoProfessor(int codigoAcessoProfessor) {
+	public void setCodigoAcessoProfessor(int codigoAcessoProfessor) {
 		if (codigoAcessoProfessor > 0)
 			this.codigoAcessoProfessor = codigoAcessoProfessor;
 	}
@@ -41,6 +42,15 @@ public class Professor extends Pessoa {
 			this.codigoTurma = codigoTurma;
 	}
 
+	public int getCodigoDisciplina() {
+		return codigoDisciplina;
+	}
+
+	public void setCodigoDisciplina(int codigoDisciplina) {
+		if (codigoDisciplina > 0)
+			this.codigoDisciplina = codigoDisciplina;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -48,6 +58,8 @@ public class Professor extends Pessoa {
 		builder.append(codigoAcessoProfessor);
 		builder.append(", codigoTurma=");
 		builder.append(codigoTurma);
+		builder.append(", codigoDisciplina=");
+		builder.append(codigoDisciplina);
 		builder.append(", especialidade=");
 		builder.append(especialidade);
 		builder.append(", salario=");

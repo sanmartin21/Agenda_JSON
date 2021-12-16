@@ -82,10 +82,13 @@ public class ListProfessor {
 		p.setCpf(ler.next());
 
 		System.out.println("Digite o código de acesso do Professor: ");
-		p.setCodigoProfessor(ler.nextInt());
+		p.setCodigoAcessoProfessor(ler.nextInt());
 
 		System.out.println("Digite o código da Turma: ");
 		p.setCodigoTurma(ler.nextInt());
+		
+		System.out.println("Digite o código da Disciplina: ");
+		p.setCodigoDisciplina(ler.nextInt());
 
 		System.out.println("Digite o salário do Professor: ");
 		p.setSalario(ler.nextDouble());
@@ -154,10 +157,10 @@ public class ListProfessor {
 				/*
 				 * System.out.println("Digite o novo código de acesso do Professor: ");
 				 * professor.setCodigoProfessor(ler.nextInt());
-				 */
+				 
 
 				System.out.println("Digite o novo código da Turma: ");
-				professor.setCodigoTurma(ler.nextInt());
+				professor.setCodigoTurma(ler.nextInt());*/
 
 				System.out.println("Digite o novo salário do Professor: ");
 				professor.setSalario(ler.nextDouble());
@@ -170,7 +173,8 @@ public class ListProfessor {
 		if (prEncontrado != null) {
 			pr.gravar();
 			System.out.println("Professor alterado com sucesso!");
-		} else {
+		} else { 
+			}if (prEncontrado == null){
 			System.out.println("Código de acesso não encontrado!");
 		}
 	}

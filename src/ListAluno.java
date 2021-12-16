@@ -82,6 +82,9 @@ public class ListAluno {
 
 		System.out.println("Digite o código da Turma: ");
 		a.setCodigoTurma(ler.nextInt());
+		
+		System.out.println("Digite o código da Disciplina: ");
+		a.setCodigoDisciplina(ler.nextInt());
 
 		System.out.println("Digite o código de acesso: ");
 		a.setCodigoAcesso(ler.nextInt());

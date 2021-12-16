@@ -75,6 +75,9 @@ public class ListTurma {
 
 		System.out.println("Digite o Código da turma: ");
 		t.setCodigoTurma(ler.nextInt());
+		
+		System.out.println("Digite o Código da disciplina: ");
+		t.setCodigoDisciplina(ler.nextInt());
 
 		System.out.println("Digite o nome da turma:");
 		t.setNomeTurma(ler.next());

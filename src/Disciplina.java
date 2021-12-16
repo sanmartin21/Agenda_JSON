@@ -1,9 +1,19 @@
 public class Disciplina {
 
 	private String descricao;
+	private int codigoDisciplina;
 	private Aluno aluno;
 	private Professor professor;
 	private Turma turma;
+
+	public int getCodigoDisciplina() {
+		return codigoDisciplina;
+	}
+
+	public void setCodigoDisciplina(int codigoDisciplina) {
+		if (codigoDisciplina > 0)
+			this.codigoDisciplina = codigoDisciplina;
+	}
 
 	public String getDescricao() {
 		return descricao;
@@ -43,6 +53,8 @@ public class Disciplina {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Disciplina [descricao=");
 		builder.append(descricao);
+		builder.append(", codigoDisciplina=");
+		builder.append(codigoDisciplina);
 		builder.append(", aluno=");
 		builder.append(aluno);
 		builder.append(", professor=");

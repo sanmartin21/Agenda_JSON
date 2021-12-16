@@ -1,6 +1,7 @@
 public class Turma {
 	private String nomeTurma;
 	private int codigoTurma;
+	private int codigoDisciplina;
 	protected Professor professor;
 	protected Aluno aluno;
 
@@ -38,6 +39,15 @@ public class Turma {
 		this.aluno = aluno;
 	}
 
+	public int getCodigoDisciplina() {
+		return codigoDisciplina;
+	}
+
+	public void setCodigoDisciplina(int codigoDisciplina) {
+		if (codigoDisciplina > 0)
+			this.codigoDisciplina = codigoDisciplina;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -45,6 +55,8 @@ public class Turma {
 		builder.append(nomeTurma);
 		builder.append(", codigoTurma=");
 		builder.append(codigoTurma);
+		builder.append(", codigoDisciplina=");
+		builder.append(codigoDisciplina);
 		builder.append(", professor=");
 		builder.append(professor);
 		builder.append(", aluno=");
